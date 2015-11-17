@@ -7,8 +7,9 @@ compiler:
 addons:
     # Install test environment for the client
     apt:
-        - python3
-        - python-virtualenv
+        packages:
+            - python3
+            - python-virtualenv
 
 
 before_install:
