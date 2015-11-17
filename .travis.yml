@@ -12,9 +12,9 @@ before_install:
     - wget "https://github.com/cpputest/cpputest.github.io/blob/master/releases/cpputest-3.6.tar.gz?raw=true" -O cpputest.tar.gz
     - tar -xzf cpputest.tar.gz
     - cd cpputest-3.6/
-    - ./configure
+    - ./configure --prefix=$HOME/cpputest
     - make
-    - sudo make install
+    - make install
     - popd
 
     # Install test environment for the client
@@ -46,7 +46,8 @@ before_script:
     - ./packager/packager.py
     - mkdir build/
     - pushd build/
-    - cmake ..
+    - tree $HOME/cpputest
+    - CMAKE_INCLUDE_PATH=$HOME/cpputest/include CMAKE_LIBRARY_PATH=$HOME/cpputest/lib cmake ..
     - popd
 
 script:
