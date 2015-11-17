@@ -7,9 +7,11 @@ compiler:
 addons:
     # Install test environment for the client
     apt:
+        sources:
+            - deadsnake
         packages:
-            - python3
-            - python3-dev
+            - python3.4
+            - python3.4-dev
             - python-virtualenv
 
 
@@ -33,11 +35,10 @@ before_script:
     # packager requirements
 
     # Create client test environment
-    - virtualenv --python=python3 venv
+    - virtualenv --python=python3.4 venv
     - source venv/bin/activate
     - python --version
     - pip install -r client/requirements.txt
-    - pip install mock==1.0.1 # python 3.2 doesn't have unittest.mock
     - pip install -r packager/requirements.txt
 
     - pushd serial-can-bridge/python
