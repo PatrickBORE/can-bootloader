@@ -46,7 +46,7 @@ before_script:
     - ./packager/packager.py
     - mkdir build/
     - pushd build/
-    - tree $HOME/cpputest
+    - ls $HOME/cpputest
     - CMAKE_INCLUDE_PATH=$HOME/cpputest/include CMAKE_LIBRARY_PATH=$HOME/cpputest/lib cmake ..
     - deactivate
     - popd
