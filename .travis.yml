@@ -12,8 +12,6 @@ addons:
         packages:
             - python3.4
             - python3.4-dev
-            - python-virtualenv
-
 
 before_install:
     # Install cpputest
@@ -35,7 +33,7 @@ before_script:
     # packager requirements
 
     # Create client test environment
-    - virtualenv --python=python3.4 venv
+    - python3.4 -m virtualenv venv
     - source venv/bin/activate
     - python --version
     - pip install -r client/requirements.txt
