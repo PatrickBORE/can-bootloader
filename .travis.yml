@@ -8,7 +8,7 @@ addons:
     # Install test environment for the client
     apt:
         sources:
-            - deadsnake
+            - deadsnakes
         packages:
             - python3.4
             - python3.4-dev
