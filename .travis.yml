@@ -33,7 +33,7 @@ before_script:
     # packager requirements
 
     # Create client test environment
-    - python3.4 -m virtualenv venv
+    - python3.4 -m venv venv
     - source venv/bin/activate
     - python --version
     - pip install -r client/requirements.txt
